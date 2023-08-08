@@ -48,7 +48,7 @@ pipeline:
                   primary:
                     spec:
                       connectorRef: dockerconnector
-                      imagePath: <+input>
+                      imagePath: https://registry.hub.docker.com/v2/
                       tag: <+input>
                     type: DockerRegistry
               type: Kubernetes
