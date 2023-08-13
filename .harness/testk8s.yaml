@@ -1,7 +1,7 @@
 pipeline:
   name: testk8s
   identifier: testk8s
-  projectIdentifier: JTCDPitch 
+  projectIdentifier: JTCDPitch
   orgIdentifier: default
   tags: {}
   stages:
@@ -12,7 +12,7 @@ pipeline:
         type: Deployment
         spec:
           serviceConfig:
-            serviceRef: Nginx
+            serviceRef: nginx
             serviceDefinition:
               spec:
                 variables: []
@@ -24,7 +24,7 @@ pipeline:
                         store:
                           type: Github
                           spec:
-                            connectorRef: harnessgitconnector
+                            connectorRef: JTGH
                             gitFetchType: Branch
                             paths:
                               - default-k8s-manifests/Manifests/Files/templates
@@ -38,7 +38,7 @@ pipeline:
                         store:
                           type: Github
                           spec:
-                            connectorRef: harnessgitconnector
+                            connectorRef: JTGH
                             gitFetchType: Branch
                             paths:
                               - default-k8s-manifests/Manifests/Files/ng_values_dockercfg.yaml
@@ -47,7 +47,7 @@ pipeline:
                 artifacts:
                   primary:
                     spec:
-                      connectorRef: dockerconnector
+                      connectorRef: JTDockerReg
                       imagePath: library/nginx
                       tag: <+input>
                     type: DockerRegistry
