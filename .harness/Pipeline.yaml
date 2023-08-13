@@ -84,3 +84,9 @@ pipeline:
                 - AllErrors
               action:
                 type: StageRollback
+  properties:
+    ci:
+      codebase:
+        connectorRef: harnessgitconnector
+        repoName: cd-pipeline-sample
+        build: <+input>
