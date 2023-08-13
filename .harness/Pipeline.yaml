@@ -1,6 +1,6 @@
 pipeline:
   name: testk8s
-  identifier: JT-CDPitch
+  identifier: testk8s
   projectIdentifier: JT-CDPitch
   orgIdentifier: default
   tags: {}
